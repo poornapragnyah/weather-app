@@ -1,0 +1,313 @@
+body{
+    color: #017786;
+		font-family: 'Oswald', sans-serif;	
+}
+
+p{
+    font-size: 70px;
+		margin:20px;
+		padding:10px;
+		font-style: italic;
+		text-shadow:6px 6px 6px #20bcd1c7;
+		margin-left: 30px;
+}
+
+img{
+    border-radius: 50px;
+    height: 200px;
+    padding: 15px;
+}
+
+svg{
+    padding:0px;
+    height: 27px;
+}
+
+input{
+    height: 30px;
+    text-align: center;
+    width:450px;
+    border-radius: 2px;
+    color:#017786 ;
+}
+
+form{
+    position: relative;
+		display: inline-block; 
+}
+
+button{
+    position: absolute;
+    border-radius: 4px;
+}
+
+#logo{
+    margin-left: 30px;
+		height: 200px;
+		padding-top: 0px;
+}
+
+#search{
+    position: absolute;
+    right:-980px;
+    top:-150px;
+    border:0;
+    background-color: aliceblue;
+}
+
+#title{
+
+		position: absolute;
+		top:50px;
+		left:250px;
+}
+
+#title h1{
+	margin: 0px;
+	padding: 0px;
+	font-size: 50px;
+}
+
+#title h2{
+	margin: 0px;
+	padding: 0px;
+	font-size: 40px;
+}
+
+#header{
+    position: relative;
+		border-bottom: 3px solid #017786;
+}
+
+nav{
+	position: absolute;
+	display: flex;
+	margin:20px 0;
+	top:130px;
+	right:120px;
+	width:350px;
+	align-items: space-between;
+}
+
+nav ul:hover{
+	font-size: 1.2em;
+	transition: 0.15s;
+	border-bottom: #017786;
+}
+
+.card,.card1{
+	margin:30px;
+	background-color: #c9dbe9ab;
+	margin-top: 0px;
+	padding: 20px;
+	border-radius: 30px;
+	display: inline-block;
+	width:500px;
+	text-transform: capitalize;
+}
+
+.card,.card1:hover{
+	box-shadow: 6px 6px 6px rgba(128, 128, 128, 0.562);
+	transition: 0.15s;
+}
+
+.card{
+	margin-left: 390px;
+}
+.card h3:nth-child(1){
+	color: rgb(238, 122, 55);
+	font-size: 20px;
+	font-style: bold;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	font-style: italic;
+}
+
+.card h1:nth-child(2){
+	font-size: 50px;
+}
+
+.card h1:nth-child(3){
+	font-size: 55px;
+}
+
+#day{
+	display:grid;
+	grid-template-columns: repeat(3,1fr);
+	max-width: fit-content;
+	grid-gap:30px;
+
+}
+
+.card1{
+	width:300px;
+	height:100px;
+	margin-left: 40px;
+	box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.562);
+	position: relative;
+	
+}
+
+.card1 img{
+	height: 70px;
+	position: absolute;
+	top:30px;
+	left:210px;
+}
+
+.card1 h3{
+	color: rgb(238, 122, 55);
+	font-style: italic;
+}
+
+footer{
+	text-align: center;
+	font-size: 30px;
+	background-color: #c9dbe9;
+}
+
+*{ margin: 0;}
+
+#clouds{
+	padding: 100px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #3adaf0 0%, rgb(126, 190, 209) 100%);
+	background: -linear-gradient(top, #14d1df 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+   
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 500px;
+	top:-300px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -40px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -350px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -950px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x6 {
+	left: -350px; top: -590px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+a { 
+	color:inherit;
+	text-decoration: none;
+}
+
+#grid2{
+	display: grid;
+	grid-template-columns: repeat(2,600px);
+	justify-content: center;
+	padding-top: 30px;
+	margin-left: 50px;
+}

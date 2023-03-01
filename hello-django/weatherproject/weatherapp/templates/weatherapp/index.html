@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's the weather</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <div id="header"><img src="{% static 'img/logo2.png' %}" alt="Logo" id="logo">
+      <div id="title"><h1>What's</h1><h2>the weather?</h2></div>
+      <form method="POST"> {% csrf_token %}
+        <div id="search"><input type="text" placeholder='Enter city' name="city" class="search"/>
+        <button type="submit" class="search"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+        </button></div>
+    </form></div>
+    <nav>
+      <a href="#"><ul>Home</ul></a>
+      <a href="aboutus.html" target="_blank"><ul>About Us</ul></a>
+      <a href="contactus.html" target="_blank"><ul>Contact Us</ul></a>
+    </nav>
+    <div id="clouds">
+      <div class="cloud x1"></div>
+      <div class="cloud x6"></div>
+      <div class="card">
+      <h3>{{day}} </h3>
+      <h1>{{city}} </h1>
+      <h1>{{temp}}°C </h1>
+    <h2>Feels like {{feels_like}}. {{description}}.</h2>
+    <h3>Pressure : {{pressure}} hPa</h3>
+    <h3>Wind Speed : {{wind_speed}} m/s</h3>
+    <h3>Humidity : {{humidity}}%</h3>
+    </div>
+    <div class="cloud x5"></div> 
+    <div class="cloud x3"></div>
+    <p><u>5-Day Forecast</u></p>
+    <div id="day">
+    <div class="card1">
+      <h3>{{day1date}}</h3>
+    <h2>{{day1desc}}</h2>
+    <h1>{{day1temp}}°C </h1>
+    <img src ='http://openweathermap.org/img/w/{{day1icon}}.png'></div>
+    <div class="card1">
+      <h3>{{day2date}}</h3>
+    <h2>{{day2desc}}</h2>
+    <h1>{{day2temp}}°C </h1>
+    <img src ='http://openweathermap.org/img/w/{{day2icon}}.png'></div>
+    <div class="card1">
+      <h3>{{day3date}}</h3>
+    <h2>{{day3desc}}</h2>
+    <h1>{{day3temp}}°C </h1>
+    <img src ='http://openweathermap.org/img/w/{{day3icon}}.png'></div>
+  </div> <div id="grid2">
+    <div class="card1"> 
+    <h3>{{day4date}}</h3>
+    <h2>{{day4desc}}</h2>
+    <h1>{{day4temp}}°C </h1>
+    <img src ='http://openweathermap.org/img/w/{{day4icon}}.png'></div>
+    <div class="card1">
+    <h3>{{day5date}}</h3>
+    <h2>{{day5desc}}</h2>
+    <h1>{{day5temp}}°C </h1>
+   <img src ='http://openweathermap.org/img/w/{{day5icon}}.png'></div>   
+  </div>
+  
+ 
+
+  <div class="cloud x2"></div>
+    <div class="cloud x4"></div>   
+    <div class="cloud x5"></div>
+    <footer>whatstheweather.org ©2023 </footer>
+    </div>
+
+  </body>
+</html>
